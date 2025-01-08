@@ -1,11 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ScrollSnap from '../components/ScrollSnap.astro';
+import ProgressTimeline from "../components/ProgressTimeline.astro";
+import NavBar from "../components/NavBar.astro"
+import NavBarG from '../components/NavBarG.astro';
+import TwSizeIndicator from '../components/TwSizeIndicator.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<TwSizeIndicator />
+	<NavBar />
+	<!-- <NavBarG /> -->
 </Layout>
+
+<style>
+	/* prevents scrolling when menu is open */
+	body:has(input:checked) {
+		overflow: hidden;
+	}
+</style>

@@ -1,0 +1,42 @@
+<!--
+- scroll-snap feature only works when the parent has
+  overflow enabled
+-->
+
+<section>
+  <div class="one">one</div>
+  <div class="two">two</div>
+  <div class="three">three</div>
+  <div class="four">four</div>
+  <div class="five">four</div>
+</section>
+
+<style>
+	section {
+		scroll-snap-type: y mandatory;
+		overflow-y: scroll; /* Added */
+		height: 100vh; /* Ensure the section takes full height of the viewport */
+		margin: 0; /* Prevent potential scrolling bugs due to margin */
+	}
+	div {
+		width: 100vw;
+		height: 50vh;
+		text-align: center;
+		scroll-snap-align: start; /* Ensures alignment works as intended */
+	}
+	.one {
+		background-color: aliceblue;
+	}
+	.two {
+		background-color: antiquewhite;
+	}
+	.three {
+		background-color: aquamarine;
+	}
+	.four {
+		background-color: aqua;
+	}
+	.five {
+		background-color: azure;
+	}
+</style>

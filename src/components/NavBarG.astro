@@ -1,0 +1,65 @@
+<header class="h-14 relative">
+  <!-- Label for the checkbox -->
+  <label for="btn" class="h-7 w-7 right-2 top-[17px] absolute z-50 cursor-pointer bg-transparent md:hidden flex flex-col justify-center items-center gap-1">
+    <!-- Hamburger menu lines -->
+    <span class="menu"></span>
+    <span class="menu"></span>
+    <span class="menu"></span>
+  </label>
+
+  <!-- Main Navigation Container -->
+  <div class="h-full w-screen py-3 md:grid md:grid-cols-3 bg-purple-100" menu-transformer>
+    <div class="bg-green-50 px-2 py-2 rounded-lg flex justify-between relative">
+      <div class="bg-yellow-200">Logo + Name</div>
+
+      <!-- Hidden Checkbox -->
+      <input type="checkbox" name="button" id="btn" class="hidden peer">
+
+      <!-- Navigation Menu -->
+      <div class="absolute top-0 left-0 w-full bg-white transition-all duration-300 transform -translate-y-full peer-checked:translate-y-0 md:hidden">
+        <div class="py-2">Item 1</div>
+        <div class="py-2">Item 2</div>
+        <div class="py-2">Item 3</div>
+      </div>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="justify-evenly items-center hidden md:flex">
+      <div>Blog</div>
+      <div>Tags</div>
+    </nav>
+  </div>
+</header>
+
+<div class="content">
+  <div class="bg-gray-100">
+    Content
+  </div>
+</div>
+
+<style>
+  /* Hamburger Menu Lines */
+  .menu {
+    height: 3px; /* Thickness of the menu line */
+    width: 28px; /* Width of the menu line */
+    background-color: black; /* Color of the menu lines */
+    border-radius: 2px; /* Smooth edges */
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+  }
+
+  /* Transition styles for the container */
+  [menu-transformer] {
+    transition: height 0.3s ease;
+  }
+
+  [menu-transformer]:has(input:checked) {
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  header:has(input:checked) > label:first-child {
+    background-color: black;
+  }
+</style>
